@@ -10,9 +10,9 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a v-if="isAdmin" href="/dashboard/clients" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clients</a>
-            <a href="/dashboard/projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-
+            <a v-if="isAdmin" href="/dashboard/clients" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Clients</a>
+            <a href="/dashboard/projects"
+             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
           </div>
         </div>
       </div>
