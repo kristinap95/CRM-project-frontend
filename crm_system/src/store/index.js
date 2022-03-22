@@ -5,10 +5,9 @@ export default createStore({
     isLoading: false,
     isAuthenticated: false,
     access: '',
-    refresh: '' 
+    refresh: '',
   },
   getters: {
-    
   },
   mutations: {
     initializeStore(state) {

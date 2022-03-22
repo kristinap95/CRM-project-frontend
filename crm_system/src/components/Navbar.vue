@@ -10,7 +10,7 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <a href="/dashboard/clients" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clients</a>
+            <a v-if="isAdmin" href="/dashboard/clients" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Clients</a>
             <a href="/dashboard/projects" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
 
           </div>
@@ -34,7 +34,7 @@ export default ({
     data() {
         return {
             user_data: '',
-            is_admin: false,
+            isAdmin: false,
         }
     },
     created() {
@@ -47,14 +47,15 @@ export default ({
             axios.get('/api/users/me/')
             .then(response => {
                 this.user_data = response.data.name
-                this.is_admin = response.data.is_superuser
+                this.isAdmin = response.data.is_superuser
+                localStorage.setItem('admin', response.data.is_superuser)
             })
             .catch(error => {
                 console.log(error)
             })
         },
         logout() {
-            axios.defaults.headers.common['Authorization'] = ''
+            axios.defaults.headers.common['Athorization'] = ''
             localStorage.removeItem('admin')
             localStorage.removeItem('access')
             localStorage.removeItem('refresh')
