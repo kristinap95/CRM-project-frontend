@@ -55,7 +55,7 @@ export default ({
             })
         },
         logout() {
-            axios.defaults.headers.common['Athorization'] = ''
+            axios.defaults.headers.common['Authorization'] = ''
             localStorage.removeItem('admin')
             localStorage.removeItem('access')
             localStorage.removeItem('refresh')
