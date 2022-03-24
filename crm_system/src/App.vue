@@ -37,9 +37,9 @@ export default ({
     }
   },
   mounted() {
-    // setInterval(() => {
-    //   this.getAccess()
-    // }, 59000)
+    setInterval(() => {
+      this.getAccess()
+    }, 59000)
   },
   methods: {
     getAccess(e) {

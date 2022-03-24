@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto py-10">
+  <div class="w-2/3 container mx-auto py-10">
   <form class="border-2 rounded-lg  mt-8 p-8 border-gray-300 shadow-lg space-y-6 w-1/3" @submit.prevent="add">
   <h1 class="text-xl font-normal leading-norma">Add Client</h1>
       <div class="rounded-md shadow-sm flex flex-col space-y-4">

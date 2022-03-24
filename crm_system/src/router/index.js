@@ -3,16 +3,17 @@ import store from '@/store'
 import Login from '../views/Login.vue'
 import Dashboard from '../views/Dashboard.vue'
 import Clients from '../components/Clients.vue'
-import Projects from '../components/Projects.vue'
-
+import ProjectsPage from '../views/ProjectsPage.vue'
+import SingleProjectPage from '../views/SingleProjectPage.vue'
+import SingleUserPage from '../views/SingleUserPage.vue'
 
 const routes = [
   {
     path: "/",
-    redirect: "/dashboard",
+    redirect: "/dashboard/",
   },
   {
-    path: '/dashboard',
+    path: '/dashboard/',
     name: 'Dashboard',
     component: Dashboard,
     meta: {
@@ -30,8 +31,8 @@ const routes = [
   },
   {
     path: '/dashboard/projects',
-    name: 'Projects',
-    component: Projects,
+    name: 'ProjectsPage',
+    component: ProjectsPage,
     meta: {
       requireLogin: true,
     }
@@ -43,6 +44,23 @@ const routes = [
     meta: {
       requireLogin: true,
       hideForClient: true
+    }
+  },
+  {
+    path: '/dashboard/project/:id/',
+    name: 'SingleProjectPage',
+    component: SingleProjectPage,
+    meta: {
+      requireLogin: true,
+    }
+  },
+  {
+    path: '/dashboard/client/:id/',
+    name: 'SingleUserPage',
+    component: SingleUserPage,
+    meta: {
+      requireLogin: true,
+      hideForClient: true,
     }
   },
   // { path: '*', redirect: '/' }
